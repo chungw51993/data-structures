@@ -5,7 +5,7 @@ describe('graph', function() {
     graph = new Graph();
   });
 
-  /*it('should have methods named "addNode", "contains", "removeNode", "addEdge", "hasEdge", "removeEdge" and "forEachNode"', function() {
+  it('should have methods named "addNode", "contains", "removeNode", "addEdge", "hasEdge", "removeEdge" and "forEachNode"', function() {
     expect(graph.addNode).to.be.a('function');
     expect(graph.contains).to.be.a('function');
     expect(graph.removeNode).to.be.a('function');
@@ -34,7 +34,7 @@ describe('graph', function() {
     graph.addEdge(3, 2);
     expect(graph.hasEdge(3, 2)).to.equal(true);
     expect(graph.hasEdge(3, 1)).to.equal(false);
-  });*/
+  });
 
   it('should remove edges between nodes', function() {
     graph.addNode(4);
@@ -45,7 +45,7 @@ describe('graph', function() {
     expect(graph.hasEdge(4, 5)).to.equal(false);
   });
 
-  /*it('should remove edges between nodes when a node is removed', function() {
+  it('should remove edges between nodes when a node is removed', function() {
     graph.addNode(4);
     graph.addNode(5);
     graph.addEdge(5, 4);
@@ -67,5 +67,5 @@ describe('graph', function() {
     expect(graph.hasEdge(1, 5)).to.equal(true);
     expect(graph.hasEdge(3, 5)).to.equal(true);
     expect(graph.hasEdge(5, 5)).to.equal(true);
-  });*/
+  });
 });

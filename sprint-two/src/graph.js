@@ -76,10 +76,8 @@ Graph.prototype.removeEdge = function(fromNode, toNode) {
   var mainArray = this.storage;
   var indexFrom = mainArray.indexOf(fromNode);
   var indexTo = mainArray.indexOf(toNode);
-  console.log(indexFrom);
   var fromChildrenArr = mainArray[indexFrom].connected;
   var toChildrenArr = mainArray[indexTo].connected;
-  console.log(fromChildrenArr);
   var indexToInFromArr = fromChildrenArr.indexOf(toNode);
   var indexFromInToArr = toChildrenArr.indexOf(fromNode);
 
