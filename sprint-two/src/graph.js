@@ -53,14 +53,11 @@ Graph.prototype.hasEdge = function(fromNode, toNode) {
   var mainArray = this.storage;
   var firstArr = mainArray[startNode].connected;
   var secondArr = mainArray[lastNode].connected;
-  
+
   if (contain(firstArr, toNode) && contain(secondArr, fromNode)) {
     return true;
   }
   return false;
-
-  
-
 };
 
 // Connects two nodes in a graph by adding an edge between them.
@@ -76,6 +73,19 @@ Graph.prototype.addEdge = function(fromNode, toNode) {
 
 // Remove an edge between any two specified (by value) nodes.
 Graph.prototype.removeEdge = function(fromNode, toNode) {
+  var mainArray = this.storage;
+  var indexFrom = mainArray.indexOf(fromNode);
+  var indexTo = mainArray.indexOf(toNode);
+  console.log(indexFrom);
+  var fromChildrenArr = mainArray[indexFrom].connected;
+  var toChildrenArr = mainArray[indexTo].connected;
+  console.log(fromChildrenArr);
+  var indexToInFromArr = fromChildrenArr.indexOf(toNode);
+  var indexFromInToArr = toChildrenArr.indexOf(fromNode);
+
+  fromChildrenArr = fromChildrenArr.slice(indexToInFromArr, 1);
+  toChildrenArr = toChildrenArr.slice(indexFromInToArr, 1);
+
 };
 
 // Pass in a callback which will be executed on each node of the graph.
