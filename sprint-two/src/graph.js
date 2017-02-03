@@ -73,7 +73,6 @@ Graph.prototype.addEdge = function(fromNode, toNode) {
   flipEdge[1] = this.allNodes[fromIndex].value;
   this.edgeList.push(edge);
   this.edgeList.push(flipEdge);
-  console.log(this.edgeList);
 };
 
 // Remove an edge between any two specified (by value) nodes.
