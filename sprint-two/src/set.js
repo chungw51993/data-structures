@@ -35,4 +35,8 @@ setPrototype.length = function() {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+   add: Constant O(1)
+   contains: Linear O(n)
+   remove: Linear O(n)
+   length: Constant O(1)
  */

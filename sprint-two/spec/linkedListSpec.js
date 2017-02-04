@@ -52,4 +52,21 @@ describe('linkedList', function() {
   });
 
   // add more tests here to test the functionality of linkedList
+  it('functionality should handle long list', function() {
+    linkedList.addToTail(1);
+    linkedList.addToTail(4);
+    linkedList.addToTail(5);
+    linkedList.addToTail(6);
+    linkedList.addToTail(7);
+    expect(linkedList.removeHead()).to.equal(1);
+    expect(linkedList.removeHead()).to.equal(4);
+    expect(linkedList.removeHead()).to.equal(5);
+    expect(linkedList.removeHead()).to.equal(6);
+    expect(linkedList.removeHead()).to.equal(7);
+    expect(linkedList.contains(1)).to.equal(false);
+    expect(linkedList.contains(4)).to.equal(false);
+    expect(linkedList.contains(5)).to.equal(false);
+    expect(linkedList.contains(6)).to.equal(false);
+    expect(linkedList.contains(7)).to.equal(false);
+  });
 });

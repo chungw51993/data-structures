@@ -15,7 +15,7 @@ var LinkedList = function() {
 
   list.removeHead = function() {
     var answer = list.head;
-    list.head = list.tail;
+    list.head = list.head.next;
     return answer.value;    
   };
 
@@ -46,5 +46,9 @@ var Node = function(value) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+   addToTail: Constant O(1);
+   removeHead: Constant O(1);
+   contains: Linear O(n);
+
  */
   

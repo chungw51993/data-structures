@@ -37,4 +37,24 @@ describe('binarySearchTree', function() {
     binarySearchTree.depthFirstLog(func);
     expect(array).to.eql([5, 2, 3]);
   });
+
+  it('should properly structure deeply nested tree', function() {
+    binarySearchTree.insert(1);
+    binarySearchTree.insert(3);
+    binarySearchTree.insert(4);
+    binarySearchTree.insert(9);
+    binarySearchTree.insert(2);
+    binarySearchTree.insert(7);
+    binarySearchTree.insert(6);
+    binarySearchTree.insert(8);
+    expect(binarySearchTree.value).to.equal(5);
+    expect(binarySearchTree.left.value).to.equal(1);
+    expect(binarySearchTree.left.right.value).to.equal(3);
+    expect(binarySearchTree.left.right.right.value).to.equal(4);
+    expect(binarySearchTree.left.right.left.value).to.equal(2);
+    expect(binarySearchTree.right.value).to.equal(9);
+    expect(binarySearchTree.right.left.value).to.equal(7);
+    expect(binarySearchTree.right.left.left.value).to.equal(6);
+    expect(binarySearchTree.right.left.right.value).to.equal(8);
+  });
 });

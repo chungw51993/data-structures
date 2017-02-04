@@ -60,4 +60,7 @@ var treeNode = function(value) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+   insert: Logarithmic O(log(N))
+   contains: Logarithmic O(log(N))
+   depthFirstLog: Linear O(N)
  */

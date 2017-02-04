@@ -73,4 +73,40 @@ describe('hashTable', function() {
     hashTable.remove('Mr.');
     expect(hashTable._limit).to.equal(8);
   });
+
+  it ('should handle creating multiple buckets', function() {
+    hashTable.insert('Jin', 'Chung');
+    hashTable.insert('Daniel', 'Ricaud');
+    hashTable.insert('Bob', 'Savage');
+    hashTable.insert('Steven', 'Tyler');
+    hashTable.insert('Macho', 'Man');
+    hashTable.insert('Michael', 'Jordan');
+    hashTable.insert('Roger', 'Federer');
+    hashTable.insert('Rafa', 'Nadal');
+    hashTable.insert('Mr.', 'Rogers');
+    hashTable.insert('Sponge', 'Bob');
+    hashTable.insert('Tosh', '.O');
+    hashTable.insert('South', 'Park');
+    hashTable.insert('Family', 'Guy');
+    hashTable.insert('Sherlock', 'Holmes');
+    hashTable.insert('Santa', 'Claus');
+    hashTable.insert('Easter', 'Jackalope');
+    expect(hashTable.retrieve('Jin')).to.equal('Chung');
+    expect(hashTable.retrieve('Daniel')).to.equal('Ricaud');
+    expect(hashTable.retrieve('Bob')).to.equal('Savage');
+    expect(hashTable.retrieve('Steven')).to.equal('Tyler');
+    expect(hashTable.retrieve('Macho')).to.equal('Man');
+    expect(hashTable.retrieve('Michael')).to.equal('Jordan');
+    expect(hashTable.retrieve('Roger')).to.equal('Federer');
+    expect(hashTable.retrieve('Rafa')).to.equal('Nadal');
+    expect(hashTable.retrieve('Mr.')).to.equal('Rogers');
+    expect(hashTable.retrieve('Sponge')).to.equal('Bob');
+    expect(hashTable.retrieve('Tosh')).to.equal('.O');
+    expect(hashTable.retrieve('South')).to.equal('Park');
+    expect(hashTable.retrieve('Family')).to.equal('Guy');
+    expect(hashTable.retrieve('Sherlock')).to.equal('Holmes');
+    expect(hashTable.retrieve('Santa')).to.equal('Claus');
+    expect(hashTable.retrieve('Easter')).to.equal('Jackalope');
+    
+  });
 });
