@@ -107,5 +107,6 @@ describe('hashTable', function() {
     expect(hashTable.retrieve('Sherlock')).to.equal('Holmes');
     expect(hashTable.retrieve('Santa')).to.equal('Claus');
     expect(hashTable.retrieve('Easter')).to.equal('Jackalope');
+    expect(hashTable._limit).to.equal(32);
   });
 });
