@@ -21,10 +21,30 @@ var BinarySearchTree = function(value) {
   };
 
   searchTreeMethod.contains = function(value) {
-    
+    var result = false;
+    var searchValue = function (nodeObj) {
+      if (nodeObj.value === value) {
+        result = true;
+      } else if (value < nodeObj.value && nodeObj.left !== null) {
+        searchValue(nodeObj.left);
+      } else if (value > nodeObj.value && nodeObj.right !== null) {
+        searchValue(nodeObj.right);
+      }
+    };
+    searchValue(searchTreeMethod);
+    return result;
   };
 
   searchTreeMethod.depthFirstLog = function(callBack) {
+    var applyToAll = function (nodeObj) {
+      callBack(nodeObj.value);
+      if (nodeObj.left !== null) {
+        applyToAll(nodeObj.left);
+      } else if (nodeObj.right !== null) {
+        applyToAll(nodeObj.right);
+      }
+    };
+    applyToAll(searchTreeMethod);
   };
 
   return searchTreeMethod;
